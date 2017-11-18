@@ -95,5 +95,18 @@ namespace WebApi.OutputCache.V2
             var cacheOutputProvider = cacheFunc != null ? cacheFunc() : request.GetDependencyScope().GetService(typeof(IApiOutputCache)) as IApiOutputCache ?? new MemoryCacheDefault();
             return cacheOutputProvider;
         }
+
+        public IAsyncApiOutputCache GetAsyncCacheOutputProvider(HttpRequestMessage request)
+        {
+            object cache;
+            _configuration.Properties.TryGetValue(typeof(IAsyncApiOutputCache), out cache);
+
+            var cacheFunc = cache as Func<IAsyncApiOutputCache>;
+
+            var cacheOutputProvider = cacheFunc != null
+                ? cacheFunc()
+                : request.GetDependencyScope().GetService(typeof(IAsyncApiOutputCache)) as IAsyncApiOutputCache ?? throw new InvalidOperationException("No Async Cache output provider registered");
+            return cacheOutputProvider;
+        }
     }
 }

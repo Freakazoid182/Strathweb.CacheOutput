@@ -57,6 +57,8 @@
   <ItemGroup>
     <Compile Include="AutoInvalidateCacheOutputAttribute.cs" />
     <Compile Include="BaseCacheAttribute.cs" />
+    <Compile Include="AsyncCacheOutputAttribute.cs" />
+    <Compile Include="CacheOutputAttribute.cs" />
     <Compile Include="CacheOutputConfiguration.cs" />
     <Compile Include="DefaultCacheKeyGenerator.cs" />
     <Compile Include="HttpConfigurationExtensions.cs" />
@@ -64,7 +66,7 @@
     <Compile Include="IgnoreCacheOutputAttribute.cs" />
     <Compile Include="InvalidateCacheOutputAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CacheOutputAttribute.cs" />
+    <Compile Include="CacheOutputAttributeBase.cs" />
     <Compile Include="TimeAttributes\CacheOutputUntilCacheAttribute.cs" />
     <Compile Include="TimeAttributes\CacheOutputUntilThisMonthAttribute.cs" />
     <Compile Include="TimeAttributes\CacheOutputUntilThisYearAttribute.cs" />

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\CacheExtensions.cs" />
+    <Compile Include="Cache\IAsyncApiOutputCache.cs" />
     <Compile Include="Cache\IApiOutputCache.cs" />
     <Compile Include="Cache\MemoryCacheDefault.cs" />
     <Compile Include="Constants.cs" />
